@@ -1,0 +1,322 @@
+divd
+<template>
+  <div>
+    <div class="news">
+      <div class="news-wrapper">
+        <span>【2022.10.01更新】</span><br />
+        <span>期間限定イベント</span>
+        <span class="text-weight"
+          >「見習い魔女のキラキラ★TWILIGHT NIGHT HALLOWEEN」</span
+        >
+        <span>開催！</span>
+      </div>
+    </div>
+    <img class="top-img" id="top-img1" src="../assets/min_Original.png" />
+    <div class="prologue fade_off">
+      <div id="prologue-title">－PROLOGUE－</div>
+      <div class="prologue-text-wrapper" id="prologue-text-wrapper-1">
+        <div class="prologue-text" id="text1">
+          <span
+            >10月31日はグリッタタウンで一番大切な日。<br />日々の平穏を願い、<br />町中はカボチャの妖精の光に包まれる。</span
+          >
+        </div>
+      </div>
+      <div class="prologue-text-wrapper" id="prologue-text-wrapper-2">
+        <div class="prologue-text" id="text2">
+          <span
+            >町の人々に妖精を届けるために、<br />魔女は年中大忙し。<br />「キラキラの魔女」で、カボチャは<br />人々の願いに姿を変える。</span
+          >
+        </div>
+      </div>
+      <div class="prologue-text-wrapper" id="prologue-text-wrapper-3">
+        <div class="prologue-text" id="text3">
+          <span
+            >____今年も大切なあの日が近づいてきた。<br />魔女は今日も大忙し。</span
+          >
+        </div>
+        <div class="prologue-text" id="text4">
+          <span
+            >見習い魔女のガーベラは、<br />今日も魔法の練習。<br />「キラキラの魔女」はまだ使えない。</span
+          >
+        </div>
+      </div>
+      <div class="prologue-text-wrapper" id="prologue-text-wrapper-4">
+        <div class="prologue-text" id="text5">
+          <span
+            >大切な日を目前としたある日、<br />魔女は突然姿を消す。<br />しかし、<br />町のシンボルとなる「カボチャの大妖精」<br />がまだ完成していない。</span
+          >
+        </div>
+      </div>
+      <div class="prologue-text-wrapper" id="prologue-text-wrapper-5">
+        <div class="prologue-text" id="text6">
+          <span
+            >突然魔女の代役を任されたガーベラは、<br />魔女としての役目を果たすことが出来るのか____</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="gerbera-wrapper fade_off">
+      <img src="../assets/gerbera.png" class="gerbera" />
+      <img src="../assets/gerbera-mini.png" class="gerbera-mini" />
+    </div>
+    <div class="gerbera-prologue-wrapper fade_off">
+      <div class="gerbera-prologue">
+        <span
+          >代々町の風習を守る魔女一家の見習い魔女。<br />母が突然失踪し、急に魔女の仕事を引き継ぐことになった。<br />しかし、いつもカボチャの妖精以外を生み出してしまう。<br />いつも一緒にいるカボチャの妖精は、幼いひに母からもらった「ぱぷ子」。カボチャの妖精はハロウィンの日に消えてしまうが、ぱぷ子はなぜか消えない。</span
+        >
+      </div>
+    </div>
+    <div class="brad-wrapper fade_off">
+      <img src="../assets/brad.png" class="brad" />
+      <img src="../assets/brad-mini.png" class="brad-mini" />
+    </div>
+    <div class="brad-prologue-wrapper fade_off">
+      <div class="brad-prologue">
+        <span
+          >代々町の風習を守る魔女一家の見習い魔女。<br />母が突然失踪し、急に魔女の仕事を引き継ぐことになった。<br />しかし、いつもカボチャの妖精以外を生み出してしまう。<br />いつも一緒にいるカボチャの妖精は、幼いひに母からもらった「ぱぷ子」。カボチャの妖精はハロウィンの日に消えてしまうが、ぱぷ子はなぜか消えない。</span
+        >
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import $ from "jquery";
+
+export default {
+  mounted: function () {
+    $(window).scroll(function () {
+      $(".prologue").each(function () {
+        var imgPos = $(this).offset().top;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll > imgPos - windowHeight + windowHeight / 5) {
+          $(this).addClass("fade_on");
+        } else {
+          $(this).removeClass("fade_on");
+        }
+      });
+      $(".gerbera-wrapper").each(function () {
+        var imgPos = $(this).offset().top;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll > imgPos - windowHeight + windowHeight / 5) {
+          $(this).addClass("fade_on");
+        } else {
+          $(this).removeClass("fade_on");
+        }
+      });
+      $(".gerbera-prologue-wrapper").each(function () {
+        var imgPos = $(this).offset().top;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll > imgPos - windowHeight + windowHeight / 5) {
+          $(this).addClass("fade_on");
+        } else {
+          $(this).removeClass("fade_on");
+        }
+      });
+      $(".brad-wrapper").each(function () {
+        var imgPos = $(this).offset().top;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll > imgPos - windowHeight + windowHeight / 5) {
+          $(this).addClass("fade_on");
+        } else {
+          $(this).removeClass("fade_on");
+        }
+      });
+      $(".brad-prologue-wrapper").each(function () {
+        var imgPos = $(this).offset().top;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll > imgPos - windowHeight + windowHeight / 5) {
+          $(this).addClass("fade_on");
+        } else {
+          $(this).removeClass("fade_on");
+        }
+      });
+    });
+  },
+};
+</script>
+
+<style scoped>
+.fade_off {
+  opacity: 0;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1s;
+}
+
+.fade_on {
+  opacity: 1;
+}
+.news {
+  width: 100%;
+  height: fit-content;
+  background-color: rgb(255, 250, 232);
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.news-wrapper {
+  width: 95%;
+}
+.news .text-weight {
+  font-weight: 600;
+}
+.top-img {
+  width: 100%;
+  height: auto;
+}
+.prologue {
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff00 0%,
+    #ffffffd3 30%,
+    #f1f1f196 50%,
+    #e6e6e696 70%,
+    #ffffffba 90%,
+    #ffffffbd 100%
+  );
+  padding: 0 30px;
+}
+#prologue-title {
+  font-size: 9vw;
+  width: fit-content;
+  margin: 40px auto;
+  -webkit-text-stroke: 1.5px rgb(255, 255, 255);
+}
+.prologue-text-wrapper {
+  margin: 50px 0 50px 0;
+}
+#prologue-text-wrapper-2 {
+  display: flex;
+  justify-content: flex-end;
+}
+#prologue-text-wrapper-3 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: fit-content;
+}
+#prologue-text-wrapper-3 #text3 {
+  margin-bottom: 20px;
+}
+#prologue-text-wrapper-4 {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 80px;
+}
+#prologue-text-wrapper-5 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+.prologue-text {
+  text-align: center;
+  width: fit-content;
+  font-size: 4vw;
+  line-height: 120%;
+}
+.gerbera-wrapper {
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    #ffffffa8 0%,
+    #ffffff 40%,
+    #ffffff 60%,
+    #ffffffbd 100%
+  );
+  padding-top: 100px;
+  height: 125vw;
+  position: relative;
+}
+.gerbera {
+  position: absolute;
+  width: 90%;
+  right: -40px;
+}
+.gerbera-mini {
+  position: absolute;
+  width: 45%;
+  left: 10px;
+  bottom: -10px;
+}
+.gerbera-prologue-wrapper {
+  width: 100%;
+  background-image: linear-gradient(to bottom, #ffffffa8 0%, #ffffff83 100%);
+  padding-bottom: 300px;
+}
+.gerbera-prologue {
+  font-size: 2.5vw;
+  width: 80%;
+  margin: 0 auto;
+  word-break: break-all;
+}
+.brad-wrapper {
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    #ffffffa8 0%,
+    #ffffff 40%,
+    #ffffff 60%,
+    #ffffffbd 100%
+  );
+  padding-top: 100px;
+  height: 93vw;
+  position: relative;
+}
+.brad {
+  position: absolute;
+  width: 107%;
+  right: -50px;
+}
+.brad-mini {
+  position: absolute;
+  width: 45%;
+  left: 10px;
+  bottom: 0;
+}
+.brad-prologue-wrapper {
+  width: 100%;
+  background-image: linear-gradient(to bottom, #ffffffa8 0%, #ffffff83 100%);
+  padding-bottom: 300px;
+}
+.brad-prologue {
+  font-size: 2.5vw;
+  width: 80%;
+  margin: 0 auto;
+  word-break: break-all;
+}
+
+#header-logo {
+  position: fixed;
+  top: 5%;
+  left: 9%;
+}
+
+/* ヘッダーロゴ フェード処理ここから */
+.v-enter {
+  opacity: 0;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 1s;
+}
+
+.v-enter-to {
+  opacity: 1;
+}
+
+.v-leave-to {
+  opacity: 0;
+  transition: opacity 1s;
+}
+/* ヘッダーロゴ フェード処理ここまで */
+</style>

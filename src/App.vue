@@ -1,28 +1,39 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <vue100vh :css="{ height: '100rvh' }" id="app">
+    <Header />
+    <router-view />
+    <Footer />
+  </vue100vh>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import vue100vh from "vue-100vh";
+
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    vue100vh,
+    Header,
+    Footer,
+  },
+};
 </script>
 
 <style>
+body {
+  margin: 0;
+  background-image: url("./assets/back-img.png");
+  background-size: 60%;
+  background-repeat: repeat;
+  overflow-x: hidden;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "游明朝体", "YuMincho", Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
