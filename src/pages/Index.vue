@@ -243,6 +243,7 @@ export default {
   padding-top: 100px;
   height: 130vw;
   position: relative;
+  overflow: hidden;
 }
 .stars {
   left: min(9vw, 100px);
@@ -294,6 +295,7 @@ export default {
   height: 111vw;
   position: relative;
   z-index: 10;
+  overflow: hidden;
 }
 .brad-name {
   position: absolute;
