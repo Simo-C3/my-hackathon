@@ -245,7 +245,7 @@ export default {
   position: relative;
 }
 .stars {
-  left: 100px;
+  left: min(9vw, 100px);
   position: absolute;
 }
 .star {
@@ -254,14 +254,14 @@ export default {
 .gerbera-name {
   position: absolute;
   width: 50vw;
-  top: 170px;
+  top: min(31vw, 140px);
   left: 20px;
   z-index: 10;
 }
 .gerbera {
   position: absolute;
   width: 90%;
-  top: 150px;
+  top: min(30vw, 150px);
   right: -40px;
 }
 .gerbera-mini {
@@ -293,17 +293,18 @@ export default {
   padding-top: 100px;
   height: 111vw;
   position: relative;
+  z-index: 10;
 }
 .brad-name {
   position: absolute;
   width: 35vw;
-  top: 170px;
-  left: 60px;
+  top: min(31vw, 170px);
+  left: min(7vw, 60px);
 }
 .brad {
   position: absolute;
   width: 107%;
-  top: 350px;
+  top: min(44vw, 350px);
   right: -50px;
 }
 .brad-mini {
@@ -316,6 +317,7 @@ export default {
   width: 100%;
   background-image: linear-gradient(to bottom, #ffffffa8 0%, #ffffff83 100%);
   padding-bottom: 20vw;
+  z-index: 1;
 }
 .brad-prologue {
   font-size: 2.5vw;
