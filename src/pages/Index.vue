@@ -56,6 +56,10 @@ divd
       </div>
     </div>
     <div class="gerbera-wrapper fade_off">
+      <div class="stars">
+        <img src="../assets/star1.png" class="star" v-for="i in 5" :key="i" />
+      </div>
+      <img src="../assets/gerbera-name.png" class="gerbera-name" />
       <img src="../assets/gerbera.png" class="gerbera" />
       <img src="../assets/gerbera-mini.png" class="gerbera-mini" />
     </div>
@@ -67,6 +71,10 @@ divd
       </div>
     </div>
     <div class="brad-wrapper fade_off">
+      <div class="stars">
+        <img src="../assets/star1.png" class="star" v-for="i in 5" :key="i" />
+      </div>
+      <img src="../assets/brad-name.png" class="brad-name" />
       <img src="../assets/brad.png" class="brad" />
       <img src="../assets/brad-mini.png" class="brad-mini" />
     </div>
@@ -81,64 +89,64 @@ divd
 </template>
 
 <script>
-import $ from "jquery";
+import $ from 'jquery'
 
 export default {
   mounted: function () {
     $(window).scroll(function () {
-      $(".prologue").each(function () {
-        var imgPos = $(this).offset().top;
-        var scroll = $(window).scrollTop();
-        var windowHeight = $(window).height();
+      $('.prologue').each(function () {
+        var imgPos = $(this).offset().top
+        var scroll = $(window).scrollTop()
+        var windowHeight = $(window).height()
         if (scroll > imgPos - windowHeight + windowHeight / 5) {
-          $(this).addClass("fade_on");
+          $(this).addClass('fade_on')
         } else {
-          $(this).removeClass("fade_on");
+          $(this).removeClass('fade_on')
         }
-      });
-      $(".gerbera-wrapper").each(function () {
-        var imgPos = $(this).offset().top;
-        var scroll = $(window).scrollTop();
-        var windowHeight = $(window).height();
+      })
+      $('.gerbera-wrapper').each(function () {
+        var imgPos = $(this).offset().top
+        var scroll = $(window).scrollTop()
+        var windowHeight = $(window).height()
         if (scroll > imgPos - windowHeight + windowHeight / 5) {
-          $(this).addClass("fade_on");
+          $(this).addClass('fade_on')
         } else {
-          $(this).removeClass("fade_on");
+          $(this).removeClass('fade_on')
         }
-      });
-      $(".gerbera-prologue-wrapper").each(function () {
-        var imgPos = $(this).offset().top;
-        var scroll = $(window).scrollTop();
-        var windowHeight = $(window).height();
+      })
+      $('.gerbera-prologue-wrapper').each(function () {
+        var imgPos = $(this).offset().top
+        var scroll = $(window).scrollTop()
+        var windowHeight = $(window).height()
         if (scroll > imgPos - windowHeight + windowHeight / 5) {
-          $(this).addClass("fade_on");
+          $(this).addClass('fade_on')
         } else {
-          $(this).removeClass("fade_on");
+          $(this).removeClass('fade_on')
         }
-      });
-      $(".brad-wrapper").each(function () {
-        var imgPos = $(this).offset().top;
-        var scroll = $(window).scrollTop();
-        var windowHeight = $(window).height();
+      })
+      $('.brad-wrapper').each(function () {
+        var imgPos = $(this).offset().top
+        var scroll = $(window).scrollTop()
+        var windowHeight = $(window).height()
         if (scroll > imgPos - windowHeight + windowHeight / 5) {
-          $(this).addClass("fade_on");
+          $(this).addClass('fade_on')
         } else {
-          $(this).removeClass("fade_on");
+          $(this).removeClass('fade_on')
         }
-      });
-      $(".brad-prologue-wrapper").each(function () {
-        var imgPos = $(this).offset().top;
-        var scroll = $(window).scrollTop();
-        var windowHeight = $(window).height();
-        if (scroll > imgPos - windowHeight + windowHeight / 5) {
-          $(this).addClass("fade_on");
+      })
+      $('.brad-prologue-wrapper').each(function () {
+        var imgPos = $(this).offset().top
+        var scroll = $(window).scrollTop()
+        var windowHeight = $(window).height()
+        if (scroll > imgPos - windowHeight) {
+          $(this).addClass('fade_on')
         } else {
-          $(this).removeClass("fade_on");
+          $(this).removeClass('fade_on')
         }
-      });
-    });
+      })
+    })
   },
-};
+}
 </script>
 
 <style scoped>
@@ -233,24 +241,39 @@ export default {
     #ffffffbd 100%
   );
   padding-top: 100px;
-  height: 125vw;
+  height: 130vw;
   position: relative;
+}
+.stars {
+  left: 100px;
+  position: absolute;
+}
+.star {
+  width: 5vw;
+}
+.gerbera-name {
+  position: absolute;
+  width: 50vw;
+  top: 170px;
+  left: 20px;
+  z-index: 10;
 }
 .gerbera {
   position: absolute;
   width: 90%;
+  top: 150px;
   right: -40px;
 }
 .gerbera-mini {
   position: absolute;
   width: 45%;
   left: 10px;
-  bottom: -10px;
+  bottom: 0;
 }
 .gerbera-prologue-wrapper {
   width: 100%;
   background-image: linear-gradient(to bottom, #ffffffa8 0%, #ffffff83 100%);
-  padding-bottom: 300px;
+  padding-bottom: 10vw;
 }
 .gerbera-prologue {
   font-size: 2.5vw;
@@ -268,12 +291,19 @@ export default {
     #ffffffbd 100%
   );
   padding-top: 100px;
-  height: 93vw;
+  height: 111vw;
   position: relative;
+}
+.brad-name {
+  position: absolute;
+  width: 35vw;
+  top: 170px;
+  left: 60px;
 }
 .brad {
   position: absolute;
   width: 107%;
+  top: 350px;
   right: -50px;
 }
 .brad-mini {
@@ -285,7 +315,7 @@ export default {
 .brad-prologue-wrapper {
   width: 100%;
   background-image: linear-gradient(to bottom, #ffffffa8 0%, #ffffff83 100%);
-  padding-bottom: 300px;
+  padding-bottom: 20vw;
 }
 .brad-prologue {
   font-size: 2.5vw;

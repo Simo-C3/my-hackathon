@@ -1,6 +1,10 @@
 <template>
   <div class="footer">
-    <div class="content-wrapper"></div>
+    <div class="content-wrapper">
+      <a href="https://.pngtree.com/so/手作りの黄金の星のベクトル"
+        >手作りの黄金の星のベクトル pngから .pngtree.com/</a
+      >
+    </div>
   </div>
 </template>
 <style scoped>
