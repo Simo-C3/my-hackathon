@@ -12,23 +12,23 @@ divd
       </div>
     </div>
     <img class="top-img" id="top-img1" src="../assets/min_Original.png" />
-    <div class="prologue fade_off">
-      <div id="prologue-title">－PROLOGUE－</div>
-      <div class="prologue-text-wrapper" id="prologue-text-wrapper-1">
+    <div class="prologue">
+      <div id="prologue-title" class="fade">－PROLOGUE－</div>
+      <div class="prologue-text-wrapper fade" id="prologue-text-wrapper-1">
         <div class="prologue-text" id="text1">
           <span
             >10月31日はグリッタタウンで一番大切な日。<br />日々の平穏を願い、<br />町中はカボチャの妖精の光に包まれる。</span
           >
         </div>
       </div>
-      <div class="prologue-text-wrapper" id="prologue-text-wrapper-2">
+      <div class="prologue-text-wrapper fade" id="prologue-text-wrapper-2">
         <div class="prologue-text" id="text2">
           <span
             >町の人々に妖精を届けるために、<br />魔女は年中大忙し。<br />「キラキラの魔女」で、カボチャは<br />人々の願いに姿を変える。</span
           >
         </div>
       </div>
-      <div class="prologue-text-wrapper" id="prologue-text-wrapper-3">
+      <div class="prologue-text-wrapper fade" id="prologue-text-wrapper-3">
         <div class="prologue-text" id="text3">
           <span
             >____今年も大切なあの日が近づいてきた。<br />魔女は今日も大忙し。</span
@@ -40,14 +40,14 @@ divd
           >
         </div>
       </div>
-      <div class="prologue-text-wrapper" id="prologue-text-wrapper-4">
+      <div class="prologue-text-wrapper fade" id="prologue-text-wrapper-4">
         <div class="prologue-text" id="text5">
           <span
             >大切な日を目前としたある日、<br />魔女は突然姿を消す。<br />しかし、<br />町のシンボルとなる「カボチャの大妖精」<br />がまだ完成していない。</span
           >
         </div>
       </div>
-      <div class="prologue-text-wrapper" id="prologue-text-wrapper-5">
+      <div class="prologue-text-wrapper fade" id="prologue-text-wrapper-5">
         <div class="prologue-text" id="text6">
           <span
             >突然魔女の代役を任されたガーベラは、<br />魔女としての役目を果たすことが出来るのか____</span
@@ -55,31 +55,31 @@ divd
         </div>
       </div>
     </div>
-    <div class="gerbera-wrapper fade_off">
-      <div class="stars">
+    <div class="gerbera-wrapper">
+      <div class="stars fade">
         <img src="../assets/star1.png" class="star" v-for="i in 5" :key="i" />
       </div>
-      <img src="../assets/gerbera-name.png" class="gerbera-name" />
-      <img src="../assets/gerbera.png" class="gerbera" />
-      <img src="../assets/gerbera-mini.png" class="gerbera-mini" />
+      <img src="../assets/gerbera-name.png" class="gerbera-name fade" />
+      <img src="../assets/gerbera.png" class="gerbera fade" />
+      <img src="../assets/gerbera-mini.png" class="gerbera-mini fade" />
     </div>
-    <div class="gerbera-prologue-wrapper fade_off">
-      <div class="gerbera-prologue">
+    <div class="gerbera-prologue-wrapper">
+      <div class="gerbera-prologue fade">
         <span
           >代々町の風習を守る魔女一家の見習い魔女。<br />母が突然失踪し、急に魔女の仕事を引き継ぐことになった。<br />しかし、いつもカボチャの妖精以外を生み出してしまう。<br />いつも一緒にいるカボチャの妖精は、幼いひに母からもらった「ぱぷ子」。カボチャの妖精はハロウィンの日に消えてしまうが、ぱぷ子はなぜか消えない。</span
         >
       </div>
     </div>
-    <div class="brad-wrapper fade_off">
-      <div class="stars">
+    <div class="brad-wrapper">
+      <div class="stars fade">
         <img src="../assets/star1.png" class="star" v-for="i in 5" :key="i" />
       </div>
-      <img src="../assets/brad-name.png" class="brad-name" />
-      <img src="../assets/brad.png" class="brad" />
-      <img src="../assets/brad-mini.png" class="brad-mini" />
+      <img src="../assets/brad-name.png" class="brad-name fade" />
+      <img src="../assets/brad.png" class="brad fade" />
+      <img src="../assets/brad-mini.png" class="brad-mini fade" />
     </div>
-    <div class="brad-prologue-wrapper fade_off">
-      <div class="brad-prologue">
+    <div class="brad-prologue-wrapper">
+      <div class="brad-prologue fade">
         <span
           >代々町の風習を守る魔女一家の見習い魔女。<br />母が突然失踪し、急に魔女の仕事を引き継ぐことになった。<br />しかし、いつもカボチャの妖精以外を生み出してしまう。<br />いつも一緒にいるカボチャの妖精は、幼いひに母からもらった「ぱぷ子」。カボチャの妖精はハロウィンの日に消えてしまうが、ぱぷ子はなぜか消えない。</span
         >
@@ -94,54 +94,26 @@ import $ from 'jquery'
 export default {
   mounted: function () {
     $(window).scroll(function () {
-      $('.prologue').each(function () {
+      $('.prologue .fade').each(function () {
         var imgPos = $(this).offset().top
         var scroll = $(window).scrollTop()
         var windowHeight = $(window).height()
         if (scroll > imgPos - windowHeight + windowHeight / 5) {
-          $(this).addClass('fade_on')
+          $(this).addClass('on')
         } else {
-          $(this).removeClass('fade_on')
+          $(this).removeClass('on')
         }
       })
-      $('.gerbera-wrapper').each(function () {
+      $(
+        '.gerbera-wrapper .fade, .gerbera-prologue-wrapper .fade, .brad-wrapper .fade, .brad-prologue-wrapper .fade'
+      ).each(function () {
         var imgPos = $(this).offset().top
         var scroll = $(window).scrollTop()
         var windowHeight = $(window).height()
         if (scroll > imgPos - windowHeight + windowHeight / 5) {
-          $(this).addClass('fade_on')
+          $(this).addClass('on1')
         } else {
-          $(this).removeClass('fade_on')
-        }
-      })
-      $('.gerbera-prologue-wrapper').each(function () {
-        var imgPos = $(this).offset().top
-        var scroll = $(window).scrollTop()
-        var windowHeight = $(window).height()
-        if (scroll > imgPos - windowHeight + windowHeight / 5) {
-          $(this).addClass('fade_on')
-        } else {
-          $(this).removeClass('fade_on')
-        }
-      })
-      $('.brad-wrapper').each(function () {
-        var imgPos = $(this).offset().top
-        var scroll = $(window).scrollTop()
-        var windowHeight = $(window).height()
-        if (scroll > imgPos - windowHeight + windowHeight / 5) {
-          $(this).addClass('fade_on')
-        } else {
-          $(this).removeClass('fade_on')
-        }
-      })
-      $('.brad-prologue-wrapper').each(function () {
-        var imgPos = $(this).offset().top
-        var scroll = $(window).scrollTop()
-        var windowHeight = $(window).height()
-        if (scroll > imgPos - windowHeight) {
-          $(this).addClass('fade_on')
-        } else {
-          $(this).removeClass('fade_on')
+          $(this).removeClass('on1')
         }
       })
     })
@@ -150,7 +122,12 @@ export default {
 </script>
 
 <style scoped>
-.fade_off {
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Zen+Maru+Gothic:wght@500&display=swap%27');
+.prologue {
+  font-family: 'Hachi Maru Pop' !important;
+}
+/* animation style */
+.fade {
   opacity: 0;
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
@@ -158,10 +135,35 @@ export default {
   -ms-transition: all 1s;
   transition: all 1s;
 }
-
-.fade_on {
+.fade.on,
+.fade.on1 {
   opacity: 1;
 }
+.fade.on:nth-of-type(1) {
+  transition-delay: 1s;
+}
+.fade.on:nth-of-type(2) {
+  transition-delay: 1.1s;
+}
+.fade.on:nth-of-type(3) {
+  transition-delay: 1.2s;
+}
+.fade.on:nth-of-type(4) {
+  transition-delay: 1.3s;
+}
+.fade.on:nth-of-type(5) {
+  transition-delay: 1.4s;
+}
+.fade.on:nth-of-type(6) {
+  transition-delay: 1.5s;
+}
+.fade.on1:nth-of-type(1) {
+  transition-delay: 0s;
+}
+.fade.on1:nth-of-type(2) {
+  transition-delay: 0.5s;
+}
+/* animation style */
 .news {
   width: 100%;
   height: fit-content;
@@ -218,7 +220,7 @@ export default {
 #prologue-text-wrapper-4 {
   display: flex;
   justify-content: flex-end;
-  padding-right: 80px;
+  padding-right: min(3vw, 80px);
 }
 #prologue-text-wrapper-5 {
   display: flex;
@@ -228,7 +230,7 @@ export default {
 .prologue-text {
   text-align: center;
   width: fit-content;
-  font-size: 4vw;
+  font-size: 3.5vw;
   line-height: 120%;
 }
 .gerbera-wrapper {
@@ -327,30 +329,4 @@ export default {
   margin: 0 auto;
   word-break: break-all;
 }
-
-#header-logo {
-  position: fixed;
-  top: 5%;
-  left: 9%;
-}
-
-/* ヘッダーロゴ フェード処理ここから */
-.v-enter {
-  opacity: 0;
-}
-
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 10000s;
-}
-
-.v-enter-to {
-  opacity: 1;
-}
-
-.v-leave-to {
-  opacity: 0;
-  transition: opacity 1s;
-}
-/* ヘッダーロゴ フェード処理ここまで */
 </style>
