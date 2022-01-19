@@ -122,10 +122,6 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Zen+Maru+Gothic:wght@500&display=swap%27');
-.prologue {
-  font-family: 'Hachi Maru Pop' !important;
-}
 /* animation style */
 .fade {
   opacity: 0;
