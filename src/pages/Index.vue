@@ -140,28 +140,28 @@ export default {
   opacity: 1;
 }
 .fade.on:nth-of-type(1) {
-  transition-delay: 1s;
-}
-.fade.on:nth-of-type(2) {
-  transition-delay: 1.1s;
-}
-.fade.on:nth-of-type(3) {
-  transition-delay: 1.2s;
-}
-.fade.on:nth-of-type(4) {
-  transition-delay: 1.3s;
-}
-.fade.on:nth-of-type(5) {
-  transition-delay: 1.4s;
-}
-.fade.on:nth-of-type(6) {
-  transition-delay: 1.5s;
-}
-.fade.on1:nth-of-type(1) {
   transition-delay: 0s;
 }
-.fade.on1:nth-of-type(2) {
+.fade.on:nth-of-type(2) {
+  transition-delay: 0.1s;
+}
+.fade.on:nth-of-type(3) {
+  transition-delay: 0.2s;
+}
+.fade.on:nth-of-type(4) {
+  transition-delay: 0.3s;
+}
+.fade.on:nth-of-type(5) {
+  transition-delay: 0.4s;
+}
+.fade.on:nth-of-type(6) {
   transition-delay: 0.5s;
+}
+.fade.on1:nth-of-type(1) {
+  transition-delay: -0.5s;
+}
+.fade.on1:nth-of-type(2) {
+  transition-delay: 0s;
 }
 /* animation style */
 .news {
